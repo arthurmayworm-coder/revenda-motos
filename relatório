@@ -1,0 +1,100 @@
+📘 Relatório de Execução – Banco db_revenda_arthur
+1️⃣ Criação do Banco e Tabelas
+
+Criei o banco db_revenda_arthur com todas as tabelas necessárias para a revenda de motos:
+
+clientes: informações de cada cliente
+
+motos: modelos de motos e seus estoques
+
+funcionarios: membros da equipe da revenda
+
+vendas: histórico de vendas
+
+moto_acessorios: acessórios disponíveis
+
+venda_motos: relação entre vendas e motos vendidas
+
+Também criei duas views para facilitar minhas consultas:
+
+vw_vendas_completo: mostra vendas, clientes e funcionários
+
+vw_motos_estoque: lista motos com estoque disponível
+
+2️⃣ Inserção de Dados
+
+Inseri registros de exemplo em todas as tabelas: clientes, motos, funcionários, vendas, acessórios e vendas de motos.
+Incluí nomes, CPFs, telefones, modelos, valores de venda e quantidades.
+
+3️⃣ Atualização de Registros com NULL
+
+Atualizei várias colunas para NULL, incluindo informações pessoais e de contato dos clientes e funcionários, dados de motos e vendas, e detalhes de acessórios.
+Isso permitiu observar o comportamento das consultas quando as chaves de ligação estão vazias.
+
+4️⃣ Criação de Usuários e Permissões
+
+Criei dois usuários com permissões distintas:
+
+mayworm → todas as permissões no banco (ler, escrever, atualizar, deletar)
+
+romeu → apenas permissão de leitura (SELECT) em todas as tabelas
+
+5️⃣ Execução das 12 Consultas com JOINs
+Clientes × Vendas
+
+inner join: nenhum registro retornado (IDs null)
+
+left join: todos os clientes aparecem; colunas de vendas = NULL
+
+right join: todas as vendas aparecem; colunas de clientes = NULL
+
+Funcionários × Vendas
+
+inner join: nenhum registro retornado (IDs null)
+
+left join: todos os funcionários aparecem; colunas de vendas = NULL
+
+right join: todas as vendas aparecem; colunas de funcionários = NULL
+
+Vendas × Venda_Motos
+
+inner join: nenhum registro retornado (IDs null)
+
+left join: todas as vendas aparecem; colunas de venda_motos = NULL
+
+right join: todos os registros de venda_motos aparecem; colunas de vendas = NULL
+
+Motos × Venda_Motos
+
+inner join: nenhum registro retornado
+
+left join: todas as motos aparecem; colunas de venda_motos = NULL
+
+right join: todos os registros de venda_motos aparecem; colunas de motos = NULL
+
+Resumo:
+
+inner join → só retorna registros com correspondência, vazio se IDs forem NULL
+
+left join → preserva todos os registros da tabela da esquerda
+
+right join → preserva todos os registros da tabela da direita
+
+6️⃣ Execução das Views
+
+vw_vendas_completo → trouxe registros, mas com campos NULL devido às atualizações
+
+vw_motos_estoque → nenhum registro, pois todos os estoques estavam NULL
+
+7️⃣ Comparação Antes × Depois do Update
+
+Antes das atualizações, os dados estavam completos e os joins funcionavam normalmente.
+Depois das atualizações para NULL, vários registros desapareceram ou apareceram como NULL, mostrando o impacto da integridade dos dados nos resultados.
+
+8️⃣ Conclusão
+
+Alterar dados para NULL impacta diretamente os resultados das consultas e joins
+
+Inner join é restritivo; left join preserva a tabela da esquerda; right join preserva a tabela da direita
+
+Permissões funcionaram como esperado: mayworm pode fazer tudo, romeu só pode ler
