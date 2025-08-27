@@ -179,3 +179,6 @@ right join venda_motos vm on m.id_moto = vm.id_moto;
 
 select * from vw_vendas_completo;
 select * from vw_motos_estoque;
+
+<img width="1536" height="1024" alt="896fa5d5-876f-41ab-a3d3-d9a42515498c" src="https://github.com/user-attachments/assets/c078d3ea-cecb-4739-ad90-38fc78cd753d" />
+
