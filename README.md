@@ -39,5 +39,6 @@ Organiza **clientes, funcionários, motos, acessórios e vendas**, com tabelas n
 
 
 
-<img width="674" height="784" alt="arthur (1)" src="https://github.com/user-attachments/assets/b73b4b43-830d-4bbf-abe5-02b41ca05262" />
+<
+<img width="1536" height="1024" alt="896fa5d5-876f-41ab-a3d3-d9a42515498c" src="https://github.com/user-attachments/assets/c078d3ea-cecb-4739-ad90-38fc78cd753d" />
 
